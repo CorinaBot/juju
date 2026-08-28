@@ -8,6 +8,7 @@ import { Close } from "@/components/funnel/close";
 import { Button } from "@/components/ui/button";
 import { VERTICALS, type Vertical } from "@/lib/verticals";
 import { SITE } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 function findLane(id: string): Vertical | undefined {
   return VERTICALS.find((v) => v.id === id);
@@ -42,16 +43,16 @@ function LanePage() {
         {hero?.video ? (
           <video
             className="absolute inset-0 h-full w-full object-cover"
-            poster={hero.src}
+            poster={hero.src ? asset(hero.src) : undefined}
             autoPlay
             muted
             loop
             playsInline
           >
-            <source src={hero.video} type="video/mp4" />
+            <source src={asset(hero.video)} type="video/mp4" />
           </video>
         ) : hero?.src ? (
-          <img src={hero.src} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={asset(hero.src)} alt="" className="absolute inset-0 h-full w-full object-cover" />
         ) : null}
         <div className="film-veil absolute inset-0" />
         <div className="relative mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-end px-6 pb-16 pt-32">

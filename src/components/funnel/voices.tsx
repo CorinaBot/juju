@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/motion/reveal";
+import { asset } from "@/lib/asset";
 
 export function Voices() {
   return (
@@ -12,13 +13,13 @@ export function Voices() {
         </Reveal>
         <div className="mt-12 grid gap-3 md:grid-cols-2">
           <figure className="relative aspect-video overflow-hidden bg-surface">
-            <video className="h-full w-full object-cover" poster="/media/recognize.jpg" autoPlay muted loop playsInline>
-              <source src="/media/recognize.mp4" type="video/mp4" />
+            <video className="h-full w-full object-cover" poster={asset("/media/recognize.jpg")} autoPlay muted loop playsInline>
+              <source src={asset("/media/recognize.mp4")} type="video/mp4" />
             </video>
           </figure>
           <figure className="relative aspect-video overflow-hidden bg-surface">
-            <video className="h-full w-full object-cover" poster="/media/grandma.jpg" autoPlay muted loop playsInline>
-              <source src="/media/grandma-speak.mp4" type="video/mp4" />
+            <video className="h-full w-full object-cover" poster={asset("/media/grandma.jpg")} autoPlay muted loop playsInline>
+              <source src={asset("/media/grandma-speak.mp4")} type="video/mp4" />
             </video>
           </figure>
         </div>

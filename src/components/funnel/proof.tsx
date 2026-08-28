@@ -1,9 +1,10 @@
 import { Reveal } from "@/components/motion/reveal";
+import { asset } from "@/lib/asset";
 
 export function Proof() {
   return (
     <section className="relative min-h-[80vh] overflow-hidden">
-      <img src="/media/real-wedding.jpg" alt="" className="film-ken absolute inset-0 h-full w-full object-cover" />
+      <img src={asset("/media/real-wedding.jpg")} alt="" className="film-ken absolute inset-0 h-full w-full object-cover" />
       <div className="film-veil absolute inset-0" />
       <div className="relative mx-auto flex min-h-[80vh] max-w-6xl flex-col justify-end px-6 pb-20 pt-32">
         <Reveal>

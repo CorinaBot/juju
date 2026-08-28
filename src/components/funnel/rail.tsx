@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
+import { asset } from "@/lib/asset";
 import type { Slide } from "@/lib/verticals";
 
 type Props = {
@@ -114,16 +115,16 @@ export function FilmRail({ id, kicker, title, deck, cta, lane, slides }: Props) 
             ) : s.video ? (
               <video
                 className="h-full w-full object-cover"
-                poster={s.src}
+                poster={s.src ? asset(s.src) : undefined}
                 muted
                 loop
                 playsInline
                 autoPlay={i === active}
               >
-                <source src={s.video} type="video/mp4" />
+                <source src={asset(s.video)} type="video/mp4" />
               </video>
             ) : s.src ? (
-              <img src={s.src} alt={s.title} className="h-full w-full object-cover" />
+              <img src={asset(s.src)} alt={s.title} className="h-full w-full object-cover" />
             ) : null}
           </figure>
         ))}

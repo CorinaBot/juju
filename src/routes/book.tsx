@@ -3,6 +3,7 @@ import { useMemo, useState, type FormEvent } from "react";
 import { Shell } from "@/components/site/shell";
 import { Button } from "@/components/ui/button";
 import { EVENT_TYPES, GUEST_BANDS, SITE, saveLead, type Lead } from "@/lib/site";
+import { asset } from "@/lib/asset";
 import { cn } from "@/lib/utils";
 
 type Search = { pack?: string; lane?: string };
@@ -55,7 +56,7 @@ function Book() {
     <Shell>
       <div className="mx-auto grid min-h-dvh max-w-6xl gap-0 pt-24 md:grid-cols-2">
         <div className="relative hidden min-h-[32rem] md:block">
-          <img src="/media/recognize.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <img src={asset("/media/recognize.jpg")} alt="" className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-bg to-transparent" />
           <p className="absolute bottom-10 left-10 right-10 font-display text-title font-medium">
             First we hold the date.

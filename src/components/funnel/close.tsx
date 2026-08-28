@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/motion/reveal";
+import { asset } from "@/lib/asset";
 
 export function Close() {
   return (
@@ -13,9 +14,9 @@ export function Close() {
           muted
           loop
           playsInline
-          poster="/media/dancefloor.jpg"
+          poster={asset("/media/dancefloor.jpg")}
         >
-          <source src="/media/v-floor.mp4" type="video/mp4" />
+          <source src={asset("/media/v-floor.mp4")} type="video/mp4" />
         </video>
       </div>
       <div className="film-veil absolute inset-0" />

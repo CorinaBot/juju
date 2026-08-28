@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { SITE } from "@/lib/site";
+import { asset } from "@/lib/asset";
 
 export function Hero() {
   return (
@@ -12,9 +13,9 @@ export function Hero() {
           muted
           loop
           playsInline
-          poster="/media/hero-still.jpg"
+          poster={asset("/media/hero-still.jpg")}
         >
-          <source src="/media/hero-bride.mp4" type="video/mp4" />
+          <source src={asset("/media/hero-bride.mp4")} type="video/mp4" />
         </video>
       </div>
       <div className="film-veil absolute inset-0" />
