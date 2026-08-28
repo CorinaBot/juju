@@ -1,0 +1,12 @@
+node_modules
+.output
+.vinxi
+.nitro
+.vercel
+dist
+*.log
+artifacts
+attachments
+screenshots
+tmp
+.grok
